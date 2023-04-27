@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+
+:root {
+  --primary-color: #222222;
+  --bg-color: #111111;
+  --text-color: #ededed;
+  --text-color-darker: #bbbbbb;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "JetBrains Mono", monospace;
+}
+
+main {
+  padding: 100px;
+}
+
+.text-area {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 22px;
+}
+
+.contacts a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.contacts a i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid var(--text-color-darker);
+  color: var(--text-color);
+  opacity: 50%;
+}
+
+.contacts a i:hover {
+  opacity: 75%;
+}
+
+.contacts a i:active {
+  opacity: 100%;
+}
+
+.comment {
+  font-size: 18px;
+  max-width: fit-content;
+  color: var(--text-color-darker);
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  font-size: 12px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--primary-color) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.typed {
+  overflow: hidden;
+  white-space: nowrap;
+  padding-right: 1px;
+  border-right: 0.15em solid var(--text-color);
+  animation: typing 5s steps(60, end), blink 0.75s step-end infinite;
+}
+
+.profile {
+  width: 300px;
+  border-radius: 50%;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
